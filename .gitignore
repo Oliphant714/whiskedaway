@@ -1,0 +1,29 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.pub
+id_ecdsa
+id_ecdsa.pub
+id_ed25519
+id_ed25519.pub
+.ssh/
+
+# Uploaded transcript
+en-Instructor Consult*.txt
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp
+*.swo
