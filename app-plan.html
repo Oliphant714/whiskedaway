@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhiskedAway App Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site-plan.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <img class="hero__logo" src="logo.jpg" alt="WhiskedAway logo">
+      <p class="eyebrow">Personal Web Application Plan</p>
+      <h1>WhiskedAway</h1>
+      <p class="hero__summary">
+        WhiskedAway is a wedding catering website that presents elegant food options,
+        clear pricing, and easy contact details for couples planning a special event.
+      </p>
+    </div>
+  </header>
+
+  <main class="plan">
+    <section class="panel">
+      <h2>Purpose and Audience</h2>
+      <p>
+        The purpose of this website is to help people explore WhiskedAway's wedding catering services
+        in one polished place. The site will show menu photos, package pricing, and simple contact
+        information so couples can quickly decide if the service fits their event.
+      </p>
+      <p>
+        The intended audience is engaged couples, wedding planners, and family members helping organize
+        a wedding reception. They will likely want a website that feels professional, trustworthy, and
+        easy to understand on a phone or computer.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Dynamic Elements</h2>
+      <p>
+        JavaScript will be used to make the site more interactive without making it too complicated.
+        I plan to build a food gallery that can change based on category, such as appetizers, main dishes,
+        and desserts. I also want to add a simple pricing display that updates when a user chooses a guest count
+        or package option.
+      </p>
+      <p>
+        Another dynamic feature will be a contact section that can show a helpful message after a form is submitted.
+        These features will make the site feel more modern while still being simple enough for a beginner to code.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Pseudocode</h2>
+      <ol class="steps">
+        <li>Load the page and display the WhiskedAway heading, menu photos, pricing list, and contact information.</li>
+        <li>Store the catering packages and food items in simple arrays or objects.</li>
+        <li>When a user clicks a food category, show only the matching food cards.</li>
+        <li>When a user changes the guest count, update the estimated price.</li>
+        <li>When the contact form is submitted, prevent the page from refreshing and show a friendly confirmation message.</li>
+        <li>Keep the layout responsive so the site still looks clean on smaller screens.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Wireframes</h2>
+      <p>
+        The wireframes below show the planned layout for the homepage on desktop and mobile.
+      </p>
+
+      <div class="wireframes">
+        <article class="wireframe">
+          <h3>Desktop Wireframe</h3>
+          <div class="mockup mockup--desktop" aria-label="Desktop wireframe mockup">
+            <div class="mockup__topbar"></div>
+            <div class="mockup__hero">Hero image / headline</div>
+            <div class="mockup__grid">
+              <div class="mockup__card">Food Gallery</div>
+              <div class="mockup__card">Pricing List</div>
+              <div class="mockup__card">Contact Info</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="wireframe">
+          <h3>Mobile Wireframe</h3>
+          <div class="mockup mockup--mobile" aria-label="Mobile wireframe mockup">
+            <div class="mockup__topbar"></div>
+            <div class="mockup__hero">Hero image / headline</div>
+            <div class="mockup__card">Food Gallery</div>
+            <div class="mockup__card">Pricing List</div>
+            <div class="mockup__card">Contact Info</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Site Content</h2>
+      <ul class="details">
+        <li><strong>Images:</strong> elegant photos of appetizers, plated meals, desserts, and event tables.</li>
+        <li><strong>Pricing:</strong> simple package levels with per-guest estimates and add-on options.</li>
+        <li><strong>Contact:</strong> phone number, email address, and a short request form for quotes.</li>
+        <li><strong>Style:</strong> soft colors, clean spacing, professional typography, and a luxury wedding feel.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
