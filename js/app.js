@@ -98,7 +98,7 @@ function renderFoodCards(container, items) {
     .map(
       (item) => `
       <article class="food-card">
-        <img src="${item.image}" alt="${item.name}" loading="lazy" width="320" height="220">
+        <img src="${item.image}" alt="${item.name}" loading="lazy" width="800" height="533">
         <div class="food-card__body">
           <h3>${item.name}${item.origin ? `<span class="food-card__origin">${item.origin}</span>` : ""}</h3>
           <p>${item.description}</p>
@@ -132,7 +132,7 @@ function renderPackageCards(container, packages) {
 
       return `
         <article class="package-card">
-          <img src="${pkg.image}" alt="${pkg.name} catering package" loading="lazy" width="360" height="220">
+          <img src="${pkg.image}" alt="${pkg.name} catering package" loading="lazy" width="900" height="600">
           <div class="package-card__body">
             <span class="package-card__badge">${badge}</span>
             <h3>${pkg.name}</h3>
