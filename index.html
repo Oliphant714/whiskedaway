@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whisked Away | Wedding Catering</title>
+  <meta name="description" content="Whisked Away is a wedding catering company offering plated dinners, regional specialty menus, and full event catering. Request a free consultation.">
+
+  <link rel="icon" href="images/site/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav__brand" href="#top">
+        <img src="images/site/logo-mark.png" alt="" width="40" height="40">
+        Whisked Away
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        Menu
+      </button>
+
+      <ul class="nav__menu" id="primary-menu">
+        <li><a href="#gallery">Menu</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="nav__cta">Request a Consultation</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div>
+          <p class="eyebrow">Wedding &amp; Event Catering</p>
+          <h1>Elegant catering for the day you'll remember forever.</h1>
+          <p class="hero__summary">
+            Whisked Away designs plated dinners, chef-curated regional menus, and full event service
+            for weddings across the region. Browse our menu and packages below, then reach out to
+            schedule a free consultation.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Request a Consultation</a>
+            <a class="btn btn--ghost" href="#packages">View Packages</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="images/site/hero-tablescape.jpg" alt="Elegant wedding cake" width="640" height="480" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>Catering built around your day</h2>
+          <p>From intimate elopements to 200-guest celebrations, our team plans the menu, staffing, and service so you can focus on the day itself.</p>
+        </div>
+        <div class="about__grid">
+          <div class="about__card">
+            <h3>Custom Menus</h3>
+            <p>Choose from signature plated packages or regional specialty menus, or mix and match dishes to build your own.</p>
+          </div>
+          <div class="about__card">
+            <h3>Full-Service Staffing</h3>
+            <p>Chefs, servers, and a dedicated event coordinator are included with every package we cater.</p>
+          </div>
+          <div class="about__card">
+            <h3>Free Consultation</h3>
+            <p>Every booking starts with a conversation. Tell us your date, guest count, and vision, and we'll take it from there.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="gallery">
+      <div class="container">
+        <div class="section__head">
+          <h2>Our Menu</h2>
+          <p>A sample of the dishes we cater — filter by category to explore, including our regional specialty menus.</p>
+        </div>
+        <div class="gallery__filters" role="group" aria-label="Filter menu by category"></div>
+        <div class="gallery__grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="section__head">
+          <h2>Catering Packages</h2>
+          <p>Signature plated packages plus regional specialty menus inspired by Italian, Mexican, Indian, and Mediterranean tables.</p>
+        </div>
+        <div class="packages__grid"></div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <h2>Estimate Your Cost</h2>
+          <p>Pick a package and enter your guest count for a starting estimate. Your final quote is confirmed together during a consultation.</p>
+        </div>
+        <div class="estimator">
+          <div class="estimator__controls">
+            <div>
+              <label for="estimate-package">Package</label>
+              <select id="estimate-package"></select>
+            </div>
+            <div>
+              <label for="estimate-guests">Guest count</label>
+              <input type="number" id="estimate-guests" min="1" step="1" value="100" inputmode="numeric">
+            </div>
+            <p class="estimator__average"></p>
+          </div>
+          <div class="estimator__result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Request a Consultation</h2>
+          <p>Tell us a bit about your event and we'll follow up to schedule a free consultation.</p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__details">
+            <h3>Get in Touch</h3>
+            <ul>
+              <li><span class="icon" aria-hidden="true">📞</span> <a href="tel:+13105550199">(208) 555-0199</a></li>
+              <li><span class="icon" aria-hidden="true">✉️</span> <a href="mailto:hello@WhiskedAway.example">hello@WhiskedAway.example</a></li>
+              <li><span class="icon" aria-hidden="true">📍</span> Serving Rexburg, Idaho Falls, &amp; Madison County</li>
+              <li><span class="icon" aria-hidden="true">🕐</span> By Appointment Only</li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full name</label>
+                <input type="text" id="contact-name" name="name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-phone">Phone (optional)</label>
+                <input type="tel" id="contact-phone" name="phone" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="contact-guests">Estimated guest count (optional)</label>
+                <input type="number" id="contact-guests" name="guest_count" min="1">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-date">Event date (optional)</label>
+                <input type="date" id="contact-date" name="event_date">
+              </div>
+              <div class="form-group">
+                <label for="contact-package">Package interest</label>
+                <select id="contact-package" name="preferred_package"></select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" required placeholder="Tell us about your event..."></textarea>
+            </div>
+
+            <!-- Honeypot: real users never see or fill this field -->
+            <div class="form-group form-group--honeypot" aria-hidden="true">
+              <label for="contact-website">Leave this field blank</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button class="btn btn--primary" type="submit">Send Message</button>
+            <div class="form__status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="images/site/logo-mark.png" alt="" width="36" height="36">
+            Whisked Away
+          </div>
+          <p>Elegant wedding and event catering, from menu to final course.</p>
+        </div>
+        <div>
+          <h3 style="color:#fff; font-size:1.1rem;">Quick Links</h3>
+          <p><a href="#gallery">Menu</a><br><a href="#packages">Packages</a><br><a href="#pricing">Pricing</a><br><a href="#contact">Contact</a></p>
+        </div>
+        <div>
+          <h3 style="color:#fff; font-size:1.1rem;">Contact</h3>
+          <p>
+            <a href="tel:+13105550199">(208) 555-0199</a><br>
+            <a href="mailto:hello@WhiskedAway.example">hello@WhiskedAway.example</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span id="current-year"></span> Whisked Away Catering. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

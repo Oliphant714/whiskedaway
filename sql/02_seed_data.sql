@@ -1,6 +1,8 @@
 -- =====================================================================
--- WhiskedAway Wedding Catering Database
+-- WhiskedAway Wedding Catering Database — INTERNAL / BACK-OFFICE ONLY
 -- 02_seed_data.sql
+-- NOTE: seeds the internal ops database (sql/01_schema.sql). Not used
+-- by the public site, which only touches sql/00_public_site_schema.sql.
 -- Realistic sample data for every table (10-15 rows each), inserted in
 -- dependency order so all foreign key references are valid.
 -- =====================================================================

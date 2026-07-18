@@ -1,6 +1,14 @@
 -- =====================================================================
--- WhiskedAway Wedding Catering Database
+-- WhiskedAway Wedding Catering Database — INTERNAL / BACK-OFFICE ONLY
 -- 01_schema.sql
+--
+-- NOTE: This is the full internal operations database (events,
+-- invoices, payments, staff, etc.). It is kept in the repo as the
+-- course/reference schema and is NOT connected to the public
+-- marketing site. The live site only reads/writes
+-- sql/00_public_site_schema.sql (contact_inquiries). Do not point
+-- php/contact-handler.php at this database.
+--
 -- Creates all tables, primary keys, foreign keys, and integrity
 -- constraints (NOT NULL, UNIQUE, CHECK) for the WhiskedAway platform.
 -- Target: MySQL 8.0+ (MySQL Workbench)
@@ -236,6 +244,9 @@ CREATE TABLE payments (
 -- ---------------------------------------------------------------------
 -- 14. contact_inquiries
 -- Website contact-form submissions; may later link to a booked event.
+-- NOTE: the live site does NOT write here — see 00_public_site_schema.sql.
+-- This copy exists only so the internal ops database has its own
+-- record of an inquiry once staff convert it into a booked event.
 -- ---------------------------------------------------------------------
 CREATE TABLE contact_inquiries (
     inquiry_id      INT AUTO_INCREMENT PRIMARY KEY,

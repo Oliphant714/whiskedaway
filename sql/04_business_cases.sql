@@ -1,6 +1,8 @@
 -- =====================================================================
--- WhiskedAway Wedding Catering Database
+-- WhiskedAway Wedding Catering Database — INTERNAL / BACK-OFFICE ONLY
 -- 04_business_cases.sql
+-- NOTE: reports against the internal ops database (sql/01_schema.sql).
+-- Not used by the public site.
 -- Advanced queries and views that answer real business questions.
 -- =====================================================================
 

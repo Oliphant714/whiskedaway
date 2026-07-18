@@ -20,10 +20,50 @@ id_ed25519.pub
 # Uploaded transcript
 en-Instructor Consult*.txt
 
-# OS and editor noise
+# OS and system files
 .DS_Store
 Thumbs.db
 desktop.ini
+.AppleDouble
+.LSOverride
+*.cab
+
+# IDE and editor files
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 *.swp
 *.swo
+*~
+
+# Node and package manager
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build and dist artifacts
+dist/
+build/
+*.bundle.js
+*.min.js
+*.min.css
+
+# Database and local data
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# IDE caches
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# OS caches and temp files
+.cache/
+.tmp/
+temp/

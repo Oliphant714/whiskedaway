@@ -1,6 +1,8 @@
 -- =====================================================================
--- WhiskedAway Wedding Catering Database
+-- WhiskedAway Wedding Catering Database — INTERNAL / BACK-OFFICE ONLY
 -- 03_crud_operations.sql
+-- NOTE: operates on the internal ops database (sql/01_schema.sql).
+-- Not used by the public site.
 -- CRUD demonstrations, each preceded by the business task it solves.
 -- =====================================================================
 

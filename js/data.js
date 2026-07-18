@@ -1,0 +1,152 @@
+/**
+ * WhiskedAway — content data source
+ * -----------------------------------------------------------------
+ * Food items and catering packages live here as plain JS objects/
+ * arrays so they can be imported and rendered by app.js. No pricing
+ * or guest data collected here ever touches the database — this
+ * file is read-only marketing content.
+ *
+ * Image paths are placeholders. Drop real photos into /images/food
+ * and /images/packages using these exact filenames (see README.md
+ * for the full shot list) and everything will pick them up.
+ */
+
+// ---------------------------------------------------------------
+// Menu categories (mirrors sql/01_schema.sql -> menu_categories)
+// ---------------------------------------------------------------
+const CATEGORIES = [
+  { id: "all", label: "All Dishes" },
+  { id: "appetizers", label: "Appetizers" },
+  { id: "mains", label: "Main Dishes" },
+  { id: "sides", label: "Sides" },
+  { id: "desserts", label: "Desserts" },
+  { id: "beverages", label: "Beverages" },
+  { id: "regional", label: "Regional Specialties" }
+];
+
+// ---------------------------------------------------------------
+// Food items — each: id, name, category, price, image, description
+// ---------------------------------------------------------------
+const FOOD_ITEMS = [
+  // Appetizers
+  { id: "caprese-skewers", name: "Caprese Skewers", category: "appetizers", price: 4.0, image: "images/food/caprese-skewers.jpg", description: "Cherry tomato, fresh mozzarella, and basil with balsamic glaze.", vegetarian: true },
+  { id: "bacon-dates", name: "Bacon-Wrapped Dates", category: "appetizers", price: 4.5, image: "images/food/bacon-wrapped-dates.jpg", description: "Medjool dates stuffed with almond, wrapped in applewood bacon.", vegetarian: false },
+  { id: "salmon-crostini", name: "Smoked Salmon Crostini", category: "appetizers", price: 5.0, image: "images/food/smoked-salmon-crostini.jpg", description: "Toasted baguette, herbed cream cheese, and cold-smoked salmon.", vegetarian: false },
+
+  // Main Dishes
+  { id: "herb-chicken", name: "Herb-Roasted Chicken", category: "mains", price: 16.0, image: "images/food/herb-roasted-chicken.jpg", description: "Free-range chicken with rosemary jus.", vegetarian: false },
+  { id: "filet-mignon", name: "Grilled Filet Mignon", category: "mains", price: 26.0, image: "images/food/grilled-filet-mignon.jpg", description: "6oz filet with a red wine reduction.", vegetarian: false },
+  { id: "mushroom-risotto", name: "Wild Mushroom Risotto", category: "mains", price: 15.0, image: "images/food/wild-mushroom-risotto.jpg", description: "Creamy arborio risotto with seasonal wild mushrooms.", vegetarian: true },
+  { id: "seared-salmon", name: "Pan-Seared Salmon", category: "mains", price: 19.0, image: "images/food/pan-seared-salmon.jpg", description: "Atlantic salmon with lemon-caper butter.", vegetarian: false },
+
+  // Sides
+  { id: "herb-potatoes", name: "Garlic Herb Potatoes", category: "sides", price: 4.0, image: "images/food/garlic-herb-potatoes.jpg", description: "Roasted fingerling potatoes with garden herbs.", vegetarian: true },
+  { id: "grilled-vegetables", name: "Grilled Seasonal Vegetables", category: "sides", price: 4.0, image: "images/food/grilled-seasonal-vegetables.jpg", description: "Chef's selection of vegetables, grilled to order.", vegetarian: true },
+  { id: "truffle-mac", name: "Truffle Mac and Cheese", category: "sides", price: 5.5, image: "images/food/truffle-mac-and-cheese.jpg", description: "Creamy mac and cheese finished with truffle oil.", vegetarian: true },
+
+  // Desserts
+  { id: "vanilla-cake", name: "Classic Vanilla Bean Cake", category: "desserts", price: 7.0, image: "images/food/classic-vanilla-bean-cake.jpg", description: "Layered vanilla bean cake with silk buttercream.", vegetarian: true },
+  { id: "chocolate-torte", name: "Chocolate Ganache Torte", category: "desserts", price: 7.5, image: "images/food/chocolate-ganache-torte.jpg", description: "Rich flourless chocolate torte with ganache glaze.", vegetarian: true },
+  { id: "fruit-tarts", name: "Mini Fruit Tarts", category: "desserts", price: 5.5, image: "images/food/mini-fruit-tarts.jpg", description: "Assorted seasonal fruit tarts, hand-finished.", vegetarian: true },
+
+  // Beverages
+  { id: "lemonade-bar", name: "Signature Lemonade Bar", category: "beverages", price: 3.0, image: "images/food/signature-lemonade-bar.jpg", description: "Fresh-squeezed lemonade with herb infusions.", vegetarian: true },
+  { id: "coffee-station", name: "Espresso & Coffee Station", category: "beverages", price: 3.5, image: "images/food/espresso-coffee-station.jpg", description: "Full-service coffee and espresso bar for guests.", vegetarian: true },
+
+  // Regional Specialties (ethnic dishes)
+  { id: "tikka-masala", name: "Chicken Tikka Masala", category: "regional", price: 17.0, image: "images/food/chicken-tikka-masala.jpg", description: "Simmered in a spiced tomato-cream sauce, served with basmati.", vegetarian: false, origin: "Indian" },
+  { id: "veg-biryani", name: "Saffron Vegetable Biryani", category: "regional", price: 14.0, image: "images/food/saffron-vegetable-biryani.jpg", description: "Layered basmati rice with saffron, vegetables, and warm spice.", vegetarian: true, origin: "Indian" },
+  { id: "osso-buco", name: "Osso Buco alla Milanese", category: "regional", price: 24.0, image: "images/food/osso-buco-alla-milanese.jpg", description: "Braised veal shank with gremolata and saffron risotto.", vegetarian: false, origin: "Italian" },
+  { id: "cheese-tortellini", name: "Handmade Cheese Tortellini", category: "regional", price: 16.0, image: "images/food/handmade-cheese-tortellini.jpg", description: "Fresh pasta in a sage brown-butter sauce.", vegetarian: true, origin: "Italian" },
+  { id: "carne-asada", name: "Carne Asada with Chimichurri", category: "regional", price: 18.0, image: "images/food/carne-asada-chimichurri.jpg", description: "Grilled marinated steak, sliced, with fresh chimichurri.", vegetarian: false, origin: "Mexican" },
+  { id: "enchiladas-verdes", name: "Enchiladas Verdes", category: "regional", price: 15.0, image: "images/food/enchiladas-verdes.jpg", description: "Corn tortillas, salsa verde, queso fresco, crema.", vegetarian: false, origin: "Mexican" },
+  { id: "lamb-moussaka", name: "Lamb Moussaka", category: "regional", price: 19.0, image: "images/food/lamb-moussaka.jpg", description: "Layered eggplant, spiced lamb, and béchamel.", vegetarian: false, origin: "Greek / Mediterranean" },
+  { id: "falafel-platter", name: "Falafel & Hummus Platter", category: "regional", price: 12.0, image: "images/food/falafel-hummus-platter.jpg", description: "Crisp falafel, house hummus, pickled vegetables, warm pita.", vegetarian: true, origin: "Mediterranean" }
+];
+
+// ---------------------------------------------------------------
+// Catering packages — each: id, name, pricePerGuest, minGuests,
+// description, image, items (food item ids included), tag
+// ---------------------------------------------------------------
+const PACKAGES = [
+  {
+    id: "essentials",
+    name: "Essentials",
+    tag: "signature",
+    pricePerGuest: 68,
+    minGuests: 40,
+    image: "images/packages/essentials.png",
+    description: "A two-course menu with one passed appetizer and one plated entree — an easy, elegant starting point.",
+    items: ["caprese-skewers", "herb-chicken", "vanilla-cake"]
+  },
+  {
+    id: "classic",
+    name: "Classic",
+    tag: "signature",
+    pricePerGuest: 98,
+    minGuests: 60,
+    image: "images/packages/classic.png",
+    description: "Three-course plated service with a choice of two entrees for your guests.",
+    items: ["caprese-skewers", "herb-chicken", "mushroom-risotto", "chocolate-torte"]
+  },
+  {
+    id: "signature",
+    name: "Signature",
+    tag: "signature",
+    pricePerGuest: 138,
+    minGuests: 80,
+    image: "images/packages/signature.png",
+    description: "Full-service plated dinner featuring premium proteins and a dessert table.",
+    items: ["salmon-crostini", "filet-mignon", "seared-salmon", "truffle-mac", "fruit-tarts"]
+  },
+  {
+    id: "luxe",
+    name: "Luxe",
+    tag: "signature",
+    pricePerGuest: 188,
+    minGuests: 100,
+    image: "images/packages/luxe.png",
+    description: "A chef's tasting menu with a filet-and-salmon duet and an open dessert bar.",
+    items: ["salmon-crostini", "filet-mignon", "seared-salmon", "chocolate-torte", "fruit-tarts"]
+  },
+  {
+    id: "italian-trattoria",
+    name: "Italian Trattoria",
+    tag: "regional",
+    pricePerGuest: 118,
+    minGuests: 50,
+    image: "images/packages/italian-trattoria.png",
+    description: "A trattoria-style spread built around osso buco, handmade tortellini, and antipasti.",
+    items: ["osso-buco", "cheese-tortellini", "caprese-skewers"]
+  },
+  {
+    id: "mexican-fiesta",
+    name: "Mexican Fiesta",
+    tag: "regional",
+    pricePerGuest: 105,
+    minGuests: 50,
+    image: "images/packages/mexican-fiesta.png",
+    description: "Carne asada, enchiladas verdes, and a build-your-own elote bar.",
+    items: ["carne-asada", "enchiladas-verdes"]
+  },
+  {
+    id: "indian-spice-route",
+    name: "Indian Spice Route",
+    tag: "regional",
+    pricePerGuest: 112,
+    minGuests: 50,
+    image: "images/packages/indian-spice-route.png",
+    description: "Chicken tikka masala, saffron vegetable biryani, and a warm naan station.",
+    items: ["tikka-masala", "veg-biryani"]
+  },
+  {
+    id: "mediterranean-table",
+    name: "Mediterranean Table",
+    tag: "regional",
+    pricePerGuest: 110,
+    minGuests: 50,
+    image: "images/packages/mediterranean-table.jpg",
+    description: "Lamb moussaka and a falafel-and-hummus mezze spread, family style.",
+    items: ["lamb-moussaka", "falafel-platter"]
+  }
+];
