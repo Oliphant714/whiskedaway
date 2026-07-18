@@ -49,8 +49,7 @@ yarn-error.log*
 dist/
 build/
 *.bundle.js
-*.min.js
-*.min.css
+
 
 # Database and local data
 *.db
